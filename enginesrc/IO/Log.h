@@ -20,19 +20,18 @@ namespace le{
 			* @param String to be logged
 			* @return void
 			*/
-			void log( std::string str );
+			void inline log( const std::string str );
 			/**
 			* Logs the specified String if a certain Expression evaluates to true
 			* @param String to be logged
 			* @param Expression to be checked
 			* @return void
 			*/
-			void log_if( std::string str, bool expr );
+			void log_if( const std::string str, const bool expr );
 		};
 	}
 }
 
-typedef le::io::Log LuminousLog;
 
 
 #endif
