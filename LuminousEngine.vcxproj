@@ -38,13 +38,13 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -69,12 +69,20 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>D:\PROGRAMMING\libs\boost_1_62_0\boost;$(IncludePath)</IncludePath>
+    <IncludePath>D:\PROGRAMMING\libs\boost_1_62_0;$(IncludePath)</IncludePath>
     <LibraryPath>D:\PROGRAMMING\libs\boost_1_62_0\libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>D:\PROGRAMMING\libs\boost_1_62_0\boost;$(IncludePath)</IncludePath>
+    <IncludePath>D:\PROGRAMMING\libs\boost_1_62_0;$(IncludePath)</IncludePath>
     <LibraryPath>D:\PROGRAMMING\libs\boost_1_62_0\libs;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>D:\PROGRAMMING\libs\boost_1_62_0;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\PROGRAMMING\libs\boost_1_62_0\stage\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>D:\PROGRAMMING\libs\boost_1_62_0;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\PROGRAMMING\libs\boost_1_62_0\stage\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -115,6 +123,10 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -124,10 +136,12 @@
   <ItemGroup>
     <ClInclude Include="Core\Singleton.h" />
     <ClInclude Include="enginesrc\Core\Singleton.h" />
+    <ClInclude Include="enginesrc\IO\FileSystem.h" />
     <ClInclude Include="enginesrc\IO\Log.h" />
     <ClInclude Include="IO\Log.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="enginesrc\IO\FileSystem.cpp" />
     <ClCompile Include="enginesrc\IO\Log.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

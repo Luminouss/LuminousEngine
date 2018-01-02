@@ -5,3 +5,5 @@
 *.pdb
 *.obj
 *.tlog
+Debug/LuminousEngine.Build.CppClean.log
+*.log

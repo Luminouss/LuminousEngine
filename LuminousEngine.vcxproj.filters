@@ -27,12 +27,15 @@
     <ClInclude Include="enginesrc\IO\Log.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="enginesrc\IO\FileSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="IO\Log.cpp">
+    <ClCompile Include="enginesrc\IO\Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="enginesrc\IO\Log.cpp">
+    <ClCompile Include="enginesrc\IO\FileSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
