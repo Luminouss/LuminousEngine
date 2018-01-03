@@ -77,11 +77,11 @@
     <LibraryPath>D:\PROGRAMMING\libs\boost_1_62_0\libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\PROGRAMMING\libs\boost_1_62_0;$(IncludePath)</IncludePath>
+    <IncludePath>D:\PROGRAMMING\libs\boost_1_62_0;D:\Game Engine\Game\LuminousEngine\enginesrc;$(IncludePath)</IncludePath>
     <LibraryPath>D:\PROGRAMMING\libs\boost_1_62_0\stage\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>D:\PROGRAMMING\libs\boost_1_62_0;$(IncludePath)</IncludePath>
+    <IncludePath>D:\PROGRAMMING\libs\boost_1_62_0;D:\Game Engine\Game\LuminousEngine\enginesrc;$(IncludePath)</IncludePath>
     <LibraryPath>D:\PROGRAMMING\libs\boost_1_62_0\stage\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -136,11 +136,14 @@
   <ItemGroup>
     <ClInclude Include="Core\Singleton.h" />
     <ClInclude Include="enginesrc\Core\Singleton.h" />
+    <ClInclude Include="enginesrc\Helpers\StringManipulator.h" />
+    <ClInclude Include="enginesrc\IO\Configuration.h" />
     <ClInclude Include="enginesrc\IO\FileSystem.h" />
     <ClInclude Include="enginesrc\IO\Log.h" />
     <ClInclude Include="IO\Log.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="enginesrc\IO\Configuration.cpp" />
     <ClCompile Include="enginesrc\IO\FileSystem.cpp" />
     <ClCompile Include="enginesrc\IO\Log.cpp" />
   </ItemGroup>
