@@ -7,7 +7,7 @@
 #include "FileSystem.h"
 
 namespace le{
-	namespace io{
+	namespace sm{
 		void Configuration::Initialize( )
 		{
 			std::string filecontent = lfs_readFile( CONFIG_PATH );

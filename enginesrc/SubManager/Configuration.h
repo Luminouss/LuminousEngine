@@ -3,16 +3,16 @@
 
 #define CONFIG_PATH "D:\\Game Engine\\Game\\LuminousEngine\\config.txt"
 
-#define lc_getKey(A)  le::core::Singleton<le::io::Configuration>::get()->getByKey(A)
+#define lc_getKey(A)  le::core::Singleton<le::sm::Configuration>::get()->getByKey(A)
 
-#define lc_setKey(A,B) le::core::Singleton<le::io::Configuration>::get()->setByKey(A,B)
+#define lc_setKey(A,B) le::core::Singleton<le::sm::Configuration>::get()->setByKey(A,B)
 
-#define lc_saveConfig() le::core::Singleton<le::io::Configuration>::get()->saveConfig()
+#define lc_saveConfig() le::core::Singleton<le::sm::Configuration>::get()->saveConfig()
 
 #include <unordered_map>
 
 namespace le{
-	namespace io{
+	namespace sm{
 		class Configuration{
 		private:
 			std::unordered_map < std::string, std::string > m_configData;/** Map that holds the Configuration Strings */
