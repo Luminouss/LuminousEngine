@@ -30,10 +30,13 @@
     <ClInclude Include="enginesrc\IO\FileSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="enginesrc\IO\Configuration.h">
+    <ClInclude Include="enginesrc\Helpers\StringManipulator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="enginesrc\Helpers\StringManipulator.h">
+    <ClInclude Include="enginesrc\SubManager\Configuration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="enginesrc\SubManager\ErrorHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -44,7 +47,10 @@
     <ClCompile Include="enginesrc\IO\FileSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="enginesrc\IO\Configuration.cpp">
+    <ClCompile Include="enginesrc\SubManager\Configuration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="enginesrc\SubManager\ErrorHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

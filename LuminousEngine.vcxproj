@@ -137,15 +137,17 @@
     <ClInclude Include="Core\Singleton.h" />
     <ClInclude Include="enginesrc\Core\Singleton.h" />
     <ClInclude Include="enginesrc\Helpers\StringManipulator.h" />
-    <ClInclude Include="enginesrc\IO\Configuration.h" />
+    <ClInclude Include="enginesrc\SubManager\Configuration.h" />
     <ClInclude Include="enginesrc\IO\FileSystem.h" />
     <ClInclude Include="enginesrc\IO\Log.h" />
+    <ClInclude Include="enginesrc\SubManager\ErrorHandler.h" />
     <ClInclude Include="IO\Log.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="enginesrc\IO\Configuration.cpp" />
+    <ClCompile Include="enginesrc\SubManager\Configuration.cpp" />
     <ClCompile Include="enginesrc\IO\FileSystem.cpp" />
     <ClCompile Include="enginesrc\IO\Log.cpp" />
+    <ClCompile Include="enginesrc\SubManager\ErrorHandler.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
