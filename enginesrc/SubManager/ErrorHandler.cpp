@@ -5,7 +5,8 @@ namespace le{
 		{
 			//Load default Errors
 			m_errorMessages.insert( std::make_pair( LERR_UNDEFINED, "Undefined Error Code" ) );
-			//m_errorMessages.insert( std::make_pair( LERR_UNDEFINED, "Undefined Error Code" ) );
+			m_errorMessages.insert( std::make_pair( LERR_NOPRIVILEGE, "No Privilege for the last move" ) );
+			m_errorMessages.insert( std::make_pair( LERR_FILENOTFOUND, "Couldn't find File" ) );
 		}
 		void ErrorHandler::Finalize( )
 		{ }
@@ -18,7 +19,7 @@ namespace le{
 			return m_lastError.errCode;
 		}
 
-		std::string ErrorHandler::getLastErrorStr( ) const
+		std::string ErrorHandler::getLastErrStr( ) const
 		{
 			return m_lastError.errMessage;
 		}
