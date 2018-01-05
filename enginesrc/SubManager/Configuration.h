@@ -14,9 +14,6 @@
 namespace le{
 	namespace sm{
 		class Configuration{
-		private:
-			std::unordered_map < std::string, std::string > m_configData;/** Map that holds the Configuration Strings */
-
 		public:
 			//Load()
 			//Get()->bykey/byvalue(?)
@@ -61,7 +58,9 @@ namespace le{
 			* @return the value
 			*/
 			std::string operator[](const std::string );
-
+		private:
+			/** Map that holds the Configuration Strings */
+			std::unordered_map < std::string, std::string > m_configData;
 		}; 
 	}
 }

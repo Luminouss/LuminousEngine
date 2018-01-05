@@ -12,7 +12,7 @@ namespace le{
 			{ 
 				//Todo: fix and cleanup
 				std::vector<std::string> temp;
-				int splitpos = splitString.find( splitter );
+				size_t splitpos = splitString.find( splitter );
 				while( true ){
 					if( splitpos == -1 ){
 						temp.push_back( splitString );
