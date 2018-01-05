@@ -39,6 +39,15 @@
     <ClInclude Include="enginesrc\SubManager\ErrorHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="enginesrc\Core\Window\Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="enginesrc\Core\Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="enginesrc\Helpers\Size.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="enginesrc\IO\Log.cpp">
@@ -51,6 +60,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="enginesrc\SubManager\ErrorHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="enginesrc\Core\Window\Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="enginesrc\Core\Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

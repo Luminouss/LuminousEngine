@@ -135,7 +135,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Core\Singleton.h" />
+    <ClInclude Include="enginesrc\Core\Game.h" />
     <ClInclude Include="enginesrc\Core\Singleton.h" />
+    <ClInclude Include="enginesrc\Core\Window\Window.h" />
+    <ClInclude Include="enginesrc\Helpers\Size.h" />
     <ClInclude Include="enginesrc\Helpers\StringManipulator.h" />
     <ClInclude Include="enginesrc\SubManager\Configuration.h" />
     <ClInclude Include="enginesrc\IO\FileSystem.h" />
@@ -144,6 +147,8 @@
     <ClInclude Include="IO\Log.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="enginesrc\Core\Game.cpp" />
+    <ClCompile Include="enginesrc\Core\Window\Window.cpp" />
     <ClCompile Include="enginesrc\SubManager\Configuration.cpp" />
     <ClCompile Include="enginesrc\IO\FileSystem.cpp" />
     <ClCompile Include="enginesrc\IO\Log.cpp" />
