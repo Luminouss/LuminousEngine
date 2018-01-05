@@ -21,7 +21,9 @@ namespace le{
 			/**No privilege errorcode*/
 			LERR_NOPRIVILEGE,
 			/**File not found errorcode*/
-			LERR_FILENOTFOUND
+			LERR_FILENOTFOUND,
+			/**Window Class could not be registered*/
+			LERR_REGISTERWNDFAILED
 		};
 		/**
 		* ErrorMessage to store the last ErrorMessage
