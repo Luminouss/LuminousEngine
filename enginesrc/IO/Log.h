@@ -5,7 +5,7 @@
 
 #ifdef _DEBUG
 #define ll_log(A) le::core::Singleton<le::io::Log>::get()->log(A)
-#define ll_log_if(A,B)le::core::Singleton<le::io::Log>::get()->log_if(A,B)
+#define ll_log_if(A,B) le::core::Singleton<le::io::Log>::get()->log_if(A,B)
 #else
 #define ll_log(A) 
 #define ll_log_if(A,B)
