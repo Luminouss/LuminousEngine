@@ -13,7 +13,7 @@ namespace le{
 				//Todo: make everything private and add getters-setters
 			public:
 				/**Name of the Window*/
-				std::string name;
+				LPCSTR name;
 				/**Name of the Window Class*/
 				LPCSTR className;
 				/**Title of the Window*/

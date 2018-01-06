@@ -138,6 +138,7 @@
     <ClInclude Include="enginesrc\Core\Game.h" />
     <ClInclude Include="enginesrc\Core\Singleton.h" />
     <ClInclude Include="enginesrc\Core\Window\Window.h" />
+    <ClInclude Include="enginesrc\Helpers\Defines.h" />
     <ClInclude Include="enginesrc\Helpers\Size.h" />
     <ClInclude Include="enginesrc\Helpers\StringManipulator.h" />
     <ClInclude Include="enginesrc\SubManager\Configuration.h" />

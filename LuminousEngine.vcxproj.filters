@@ -48,6 +48,9 @@
     <ClInclude Include="enginesrc\Helpers\Size.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="enginesrc\Helpers\Defines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="enginesrc\IO\Log.cpp">

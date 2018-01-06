@@ -3,41 +3,44 @@
 #include "Core/Singleton.h"
 #include "IO/Log.h"
 
+#include "Helpers/Defines.h"
+
 namespace le{
 	namespace core{
 		namespace wnd{
 
-			LRESULT CALLBACK WndProc( HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam )
+			LRESULT CALLBACK WndProc( HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam )
 			{
 				switch( msg ){
-				case WM_CLOSE:
-				{
-					DestroyWindow( hwnd );
-					break;
-				}
+					// Check if the window is being destroyed.
 				case WM_DESTROY:
 				{
 					PostQuitMessage( 0 );
-					break;
+					return 0;
 				}
-				case WM_DISPLAYCHANGE:
+
+				// Check if the window is being closed.
+				case WM_CLOSE:
 				{
-					InvalidateRect( hwnd, NULL, FALSE );
+					PostQuitMessage( 0 );
+					return 0;
 				}
+
+				// All other messages pass to the message handler in the system class.
 				default:
 				{
-					return DefWindowProc( hwnd, msg, wParam, lParam );
+					return DefWindowProc( hwnd, msg, wparam, lparam );
 				}
 				}
 			}
+
 			bool Window::finalizeWindow( )
 			{
 				if( !ShowWindow( m_wndInfo.window, SW_SHOWDEFAULT ) ){
-					ll_err( "Error in Window::finalizeWindow() - could not show Window with Errorcode" + GetLastError( ) );
-					return false;
+					ll_err( "Window was already Visible before");
 				}
 				if( !UpdateWindow( m_wndInfo.window ) ){
-					ll_err( "Error in Window::finalizeWindow() - could not update Window with Errorcode" + GetLastError( ) );
+					ll_err( "Error in Window::finalizeWindow() - could not update Window with Errorcode" + WindowsErrorStr( ) );
 					return false;
 				}
 				return true;
@@ -61,18 +64,18 @@ namespace le{
 			bool Window::createWindow( )
 			{
 				m_wndInfo.window = CreateWindowEx(
-					0,
+					WS_EX_APPWINDOW,
 					m_wndInfo.className,
-					m_wndInfo.title,
-					WS_OVERLAPPEDWINDOW | WS_HSCROLL | WS_VSCROLL | WS_MINIMIZEBOX,
-					CW_USEDEFAULT, CW_USEDEFAULT,
+					m_wndInfo.name,
+					WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_POPUP,
+					400, 400,
 					m_wndInfo.size.width, m_wndInfo.size.height,
 					NULL, NULL,
 					m_wndInfo.hInstance,
 					NULL
 				);
 				if( m_wndInfo.window == NULL ){
-					ll_err( "Error in Window::createWindow() - could not Create Window with error Code" + std::to_string( GetLastError( ) ) );
+					ll_err( "Error in Window::createWindow() - could not Create Window with error Code" + WindowsErrorStr( ) );
 					return false;
 				}
 				return true;
@@ -82,15 +85,18 @@ namespace le{
 				//Todo: make this customizable
 				WNDCLASSEX wndex{ 0 };
 				wndex.cbSize = sizeof( WNDCLASSEX );
-				wndex.hIcon = LoadIcon( NULL, IDI_APPLICATION );
+				wndex.hIcon = wndex.hIconSm = LoadIcon( NULL, IDI_APPLICATION );
 				wndex.hCursor = LoadCursor( NULL, IDC_ARROW );
-				wndex.style = CS_HREDRAW | CS_VREDRAW;
+				wndex.style = CS_HREDRAW | CS_VREDRAW | CS_OWNDC;
+				wndex.cbClsExtra = 0;
+				wndex.cbWndExtra = 0;
 				wndex.hInstance = m_wndInfo.hInstance;
 				wndex.lpfnWndProc = ( WNDPROC ) WndProc;
 				wndex.lpszClassName = m_wndInfo.className;
-				wndex.hbrBackground = ( HBRUSH ) GetStockObject( WHITE_BRUSH );
+				wndex.lpszMenuName = NULL;
+				wndex.hbrBackground = ( HBRUSH ) GetStockObject( BLACK_BRUSH );
 				if( !RegisterClassEx( &wndex ) ){
-					ll_err( "Error in Window::registerWndClass() - could not register WNDCLASS with error Code" + GetLastError( ) );
+					ll_err( "Error in Window::registerWndClass() - could not register WNDCLASS with error Code" + WindowsErrorStr( ) );
 					return false;
 				}
 				return true;
